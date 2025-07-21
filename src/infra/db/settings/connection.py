@@ -1,0 +1,20 @@
+"""Database connection handler for the application."""
+
+from sqlalchemy import create_engine
+from sqlalchemy.engine import Engine
+
+
+class DBConnectionHandler:
+	"""Handles the database connection for the application."""
+
+	def __init__(self) -> None:
+		"""Initialize the database connection handler."""
+		self.__connection_string = 'sqlite:///clean_database.db'
+		self.__engine = self.__create_database_engine()
+
+	def __create_database_engine(self) -> Engine:
+		return create_engine(self.__connection_string)
+
+	def get_engine(self) -> Engine:
+		"""Get the database engine."""
+		return self.__engine
