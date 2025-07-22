@@ -1,4 +1,4 @@
-"""Defines the declarative base class for SQLAlchemy ORM models."""
+"""Define the declarative base class for SQLAlchemy ORM models."""
 
 from sqlalchemy.orm import DeclarativeBase
 

@@ -1,4 +1,4 @@
-"""Defines the user entity model for the database."""
+"""Define the user entity model for the database."""
 
 from sqlalchemy import Column, Integer, String
 

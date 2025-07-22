@@ -1,4 +1,4 @@
-"""Defines the repository for managing user entities in the database."""
+"""Define the repository for managing user entities in the database."""
 
 from src.infra.db.entities.users import Users
 from src.infra.db.settings.connection import DBConnectionHandler
