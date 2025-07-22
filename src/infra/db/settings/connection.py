@@ -23,7 +23,7 @@ class DBConnectionHandler:
 
 	def __enter__(self) -> 'DBConnectionHandler':
 		"""Enter the runtime context related to this object."""
-		self.__session = Session(self.__engine)
+		self.session = Session(self.__engine)
 		return self
 
 	def __exit__(self, exc_type, exc_value, traceback) -> None:
