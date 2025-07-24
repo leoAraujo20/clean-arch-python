@@ -22,10 +22,25 @@ def test_insert_user() -> None:
 				Users.last_name == last_name,
 				Users.age == age,
 			),
-		).scalar_one_or_none()
+		).scalar()
 		assert user
 		assert user.first_name == first_name
 		assert user.last_name == last_name
 		assert user.age == age
+		database.session.delete(user)
+		database.session.commit()
+
+def test_get_user() -> None:
+	"""Test the get_user method of UsersRepository."""
+	first_name = 'Test'
+	last_name = 'Get'
+	age = 2
+	users_repository = UsersRepository()
+	users_repository.insert_user(first_name, last_name, age)
+	user = users_repository.get_user(first_name, last_name, age)
+	assert user.first_name == first_name
+	assert user.last_name == last_name
+	assert user.age == age
+	with DBConnectionHandler() as database:
 		database.session.delete(user)
 		database.session.commit()
