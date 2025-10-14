@@ -1,18 +1,23 @@
-[project]
+[tool.poetry]
 name = "clean-arch-python"
 version = "0.1.0"
 description = "Add your description here"
+authors = ["Seu Nome <seu_email@example.com>"] 
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "pytest>=8.4.1",
-    "sqlalchemy>=2.0.41",
-]
+packages = [{include = "clean_arch_python"}]
 
-[dependency-groups]
-dev = [
-    "ruff>=0.12.4",
-]
+[tool.poetry.dependencies]
+python = ">=3.13"
+pytest = ">=8.4.1"
+sqlalchemy = ">=2.0.41"
+
+[tool.poetry.group.dev.dependencies]
+ruff = ">=0.12.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.ruff.lint]
 select = ["ALL"]
