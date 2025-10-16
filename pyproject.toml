@@ -22,7 +22,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff.lint]
 select = ["ALL"]
 fixable = ["ALL"]
-ignore = ["W191", "S101", "Q000"] 
+ignore = ["W191", "S101", "Q000", "D100", "D104", "INP001", "PIE790"] 
 
 [tool.ruff]
 line-length = 120
@@ -31,3 +31,6 @@ line-length = 120
 quote-style = "single"
 indent-style = "tab"
 docstring-code-format = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

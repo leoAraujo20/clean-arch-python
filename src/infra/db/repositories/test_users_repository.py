@@ -37,7 +37,7 @@ def test_get_user() -> None:
 	age = 2
 	users_repository = UsersRepository()
 	users_repository.insert_user(first_name, last_name, age)
-	user = users_repository.get_user(first_name, last_name, age)
+	user = users_repository.get_user(first_name)
 	assert user.first_name == first_name
 	assert user.last_name == last_name
 	assert user.age == age
